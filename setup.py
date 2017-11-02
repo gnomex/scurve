@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import pkg_resources
 
-install_requires = []
+install_requires = ['cairocffi']
 
 def package_installed(pkg):
     """Check if package is installed"""
@@ -23,7 +23,7 @@ elif package_installed('PIL'):
 else:
     install_requires.append('Pillow !=2.4.0')
 
-version = "0.2"
+version = "0.3"
 setup(
         name = "scurve",
         version = version,

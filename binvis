@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os.path, math, string, sys
+import os.path, math, string, sys, signal
 import scurve
 from scurve import progress, utils, draw
 from PIL import Image, ImageDraw
@@ -213,5 +213,10 @@ def main():
         drawmap_square(options.map, options.size, csource, dst, prog)
     prog.clear()
 
+def signal_handler(signum, stack):
+    print("SIGINT interrupt received, stopping...")
+    sys.exit(-1)
+
+signal.signal(signal.SIGINT, signal_handler)
 
 main()

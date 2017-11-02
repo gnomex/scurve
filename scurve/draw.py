@@ -1,5 +1,6 @@
 import math
-import cairo
+# import cairo
+import cairocffi as cairo
 
 class Canvas:
     def __init__(self, width, height):
